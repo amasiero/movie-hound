@@ -29,7 +29,7 @@
         :src="movie.poster"
         :alt="movie.title"
         :title="movie.title"
-        class="flex-0 object-cover rounded-md border-[1px] border-gray-700 dark:border-gray-300 max-h-[495px]"
+        class="flex-0 object-fill rounded-md border-[1px] border-gray-700 dark:border-gray-300 max-w-[300px] max-h-[495px]"
       />
       <div class="flex-1">
         <div class="flex-col">

@@ -77,5 +77,7 @@
       </div>
     </section>
   </section>
-  <loading-spin v-else />
+  <div v-else class="flex justify-center items-center h-screen">
+    <loading-spin />
+  </div>
 </template>

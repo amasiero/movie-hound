@@ -10,7 +10,7 @@
 
   const props = defineProps<TooltipProps>();
   const floatingRef = ref<HTMLDivElement | null>(null);
-  const targetRef = ref<HTMLElement | null>(null);
+  const targetRef = ref<HTMLDivElement | null>(null);
   const arrowRef = ref<HTMLDivElement | null>(null);
   const target = computed(() => targetRef.value);
   const tooltip = computed(() => floatingRef.value);

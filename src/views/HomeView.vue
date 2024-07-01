@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import LoadingSpin from '@/components/LoadingSpin.vue';
   import MovieCard from '@/components/MovieCard.vue';
   import { baseUrl } from '@/models/apiBase';
   import Movie from '@/models/movie';
@@ -36,5 +37,6 @@
     <div v-if="isFinished" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 my-4">
       <movie-card v-for="movie in movies" :key="movie.imdbId" :movie="movie" />
     </div>
+    <loading-spin v-else />
   </section>
 </template>

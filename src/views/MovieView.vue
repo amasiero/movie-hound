@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import Badge from '@/components/Badge.vue';
+  import LoadingSpin from '@/components/LoadingSpin.vue';
   import Tooltip from '@/components/Tooltip.vue';
   import { baseUrl } from '@/models/apiBase';
   import Movie from '@/models/movie';
@@ -76,4 +77,5 @@
       </div>
     </section>
   </section>
+  <loading-spin v-else />
 </template>

@@ -1,7 +1,7 @@
 export default interface Movie {
   title: string;
   year: string;
-  imdbID: string;
+  imdbId: string;
   type: string;
   poster: string;
   plot?: string;
@@ -17,7 +17,7 @@ export const movies: Movie[] = [
   {
     title: 'Star Wars: Episode IV - A New Hope',
     year: '1977',
-    imdbID: 'tt0076759',
+    imdbId: 'tt0076759',
     type: 'movie',
     poster:
       'https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg',
@@ -32,7 +32,7 @@ export const movies: Movie[] = [
   {
     title: 'Star Wars: Episode V - The Empire Strikes Back',
     year: '1980',
-    imdbID: 'tt0080684',
+    imdbId: 'tt0080684',
     type: 'movie',
     poster:
       'https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg',
@@ -47,7 +47,7 @@ export const movies: Movie[] = [
   {
     title: 'Star Wars: Episode VI - Return of the Jedi',
     year: '1983',
-    imdbID: 'tt0086190',
+    imdbId: 'tt0086190',
     type: 'movie',
     poster:
       'https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
@@ -62,7 +62,7 @@ export const movies: Movie[] = [
   {
     title: 'Star Wars: Episode VII - The Force Awakens',
     year: '2015',
-    imdbID: 'tt2488496',
+    imdbId: 'tt2488496',
     type: 'movie',
     poster: 'https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg',
     plot: '30 years after the defeat of Darth Vader and the Empire, Rey, a scavenger from the planet Jakku, finds a BB-8 droid that knows the whereabouts of the long lost Luke Skywalker. Rey, as well as a rogue stormtrooper and two smugglers, are thrown into the middle of a battle between the Resistance and the daunting legions of the First Order.',
@@ -76,7 +76,7 @@ export const movies: Movie[] = [
   {
     title: 'Star Wars: Episode I - The Phantom Menace',
     year: '1999',
-    imdbID: 'tt0120915',
+    imdbId: 'tt0120915',
     type: 'movie',
     poster:
       'https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg',
@@ -91,7 +91,7 @@ export const movies: Movie[] = [
   {
     title: 'Star Wars: Episode III - Revenge of the Sith',
     year: '2005',
-    imdbID: 'tt0121766',
+    imdbId: 'tt0121766',
     type: 'movie',
     poster: 'https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg',
     plot: "Nearly three years have passed since the beginning of the Clone Wars. The Republic, with the help of the Jedi, take on Count Dooku and the Separatists. With a new threat rising, the Jedi Council sends Obi-Wan Kenobi and Anakin Skywalker to aid the captured Chancellor. Anakin feels he is ready to be promoted to Jedi Master. Obi-Wan is hunting down the Separatist General, Grievous. When Anakin has future visions of pain and suffering coming Padmé's way, he sees Master Yoda for counsel. When Darth Sidious executes Order 66, it destroys most of all the Jedi have built. Experience the birth of Darth Vader. Feel the betrayal that leads to hatred between two brothers. And witness the power of hope.",
@@ -105,7 +105,7 @@ export const movies: Movie[] = [
   {
     title: 'Star Wars: Episode II - Attack of the Clones',
     year: '2002',
-    imdbID: 'tt0121765',
+    imdbId: 'tt0121765',
     type: 'movie',
     poster:
       'https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg',
@@ -120,7 +120,7 @@ export const movies: Movie[] = [
   {
     title: 'Rogue One: A Star Wars Story',
     year: '2016',
-    imdbID: 'tt3748528',
+    imdbId: 'tt3748528',
     type: 'movie',
     poster: 'https://m.media-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_SX300.jpg',
     plot: 'All looks lost for the Rebellion against the Empire as they learn of the existence of a new super weapon, the Death Star. Once a possible weakness in its construction is uncovered, the Rebel Alliance must set out on a desperate mission to steal the plans for the Death Star. The future of the entire galaxy now rests upon its success.',
@@ -134,7 +134,7 @@ export const movies: Movie[] = [
   {
     title: 'Star Wars: Episode VIII - The Last Jedi',
     year: '2017',
-    imdbID: 'tt2527336',
+    imdbId: 'tt2527336',
     type: 'movie',
     poster: 'https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg',
     plot: 'Jedi Master-in-hiding Luke Skywalker unwillingly attempts to guide young hopeful Rey in the ways of the force, while Leia, former princess turned general, attempts to lead what is left of the Resistance away from the ruthless tyrannical grip of the First Order.',
@@ -148,7 +148,7 @@ export const movies: Movie[] = [
   {
     title: 'Star Wars: Episode IX - The Rise of Skywalker',
     year: '2019',
-    imdbID: 'tt2527338',
+    imdbId: 'tt2527338',
     type: 'movie',
     poster:
       'https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg',

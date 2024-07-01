@@ -6,9 +6,9 @@
   import { useRouteParams } from '@vueuse/router';
   import { computed, unref } from 'vue';
 
-  const imdbID = useRouteParams('imdbID');
+  const imdbId = useRouteParams('imdbId');
 
-  const movie = computed(() => movies.find((movie) => movie.imdbID === unref(imdbID)));
+  const movie = computed(() => movies.find((movie) => movie.imdbId === unref(imdbId)));
 </script>
 
 <template>

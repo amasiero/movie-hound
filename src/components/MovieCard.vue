@@ -11,7 +11,7 @@
 
 <template>
   <router-link
-    :to="{ name: 'movie', params: { imdbID: movie.imdbID } }"
+    :to="{ name: 'movie', params: { imdbId: movie.imdbId } }"
     class="rounded-lg overflow-hidden shadow-lg hover:transition-transform hover:scale-110 hover:rotate-3 hover:duration-300 hover:ease-in-out"
   >
     <img :src="movie.poster" :alt="movie.title" :title="movie.title" class="w-full h-full object-cover rounded-lg" />

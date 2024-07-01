@@ -1,18 +1,40 @@
 <script setup lang="ts">
   import Badge from '@/components/Badge.vue';
   import Tooltip from '@/components/Tooltip.vue';
-  import { movies } from '@/models/movie';
+  import { baseUrl } from '@/models/apiBase';
+  import Movie from '@/models/movie';
   import { ArrowLeftCircleIcon } from '@heroicons/vue/24/outline';
+  import { useAxios } from '@vueuse/integrations/useAxios';
   import { useRouteParams } from '@vueuse/router';
-  import { computed, unref } from 'vue';
+  import camelcaseKeys from 'camelcase-keys';
+  import { ref } from 'vue';
 
   const imdbId = useRouteParams('imdbId');
+  const movie = ref<Movie | null>(null);
 
-  const movie = computed(() => movies.find((movie) => movie.imdbId === unref(imdbId)));
+  const { execute, isFinished } = useAxios(
+    baseUrl,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      params: {
+        i: imdbId.value,
+      },
+    },
+    {
+      immediate: true,
+      onSuccess(response) {
+        movie.value = camelcaseKeys(response, { deep: true });
+      },
+    },
+  );
+  execute();
 </script>
 
 <template>
-  <section class="flex flex-col p-4 max-w-7xl mx-auto font-open-sans">
+  <section v-if="isFinished" class="flex flex-col p-4 max-w-7xl mx-auto font-open-sans">
     <div class="flex items-center gap-4 text-gray-700 dark:text-gray-300">
       <tooltip content="Go back" placement="bottom">
         <button @click.prevent="$router.go(-1)">

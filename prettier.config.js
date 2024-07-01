@@ -1,0 +1,17 @@
+export default {
+  plugins: ['@trivago/prettier-plugin-sort-imports'],
+  arrowParens: 'always',
+  bracketSameLine: false,
+  bracketSpacing: true,
+  endOfLine: 'lf',
+  printWidth: 120,
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  useTabs: false,
+  vueIndentScriptAndStyle: true,
+  trailingComma: 'all',
+  importOrder: ['^@core/(.*)$', '^@server/(.*)$', '^@ui/(.*)$', '^[./]', '^./*.css'],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
+};

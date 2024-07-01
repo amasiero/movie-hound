@@ -23,7 +23,6 @@
       immediate: true,
       onSuccess(response) {
         const moviesInCamelCase = camelcaseKeys(response.Search, { deep: true });
-        console.log(moviesInCamelCase);
         movies.value = moviesInCamelCase;
       },
     },

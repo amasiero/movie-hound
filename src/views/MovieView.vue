@@ -22,6 +22,7 @@
       },
       params: {
         i: imdbId.value,
+        plot: 'full',
       },
     },
     {

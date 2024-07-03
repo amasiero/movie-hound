@@ -6,10 +6,13 @@
   import Movie from '@/models/movie';
   import { useAxios } from '@vueuse/integrations/useAxios';
   import camelcaseKeys from 'camelcase-keys';
-  import { ref } from 'vue';
+  import { computed, ref } from 'vue';
 
   const movies = ref<Movie[]>([]);
   const totalMovies = ref(0);
+
+  const randomSearchTerms = ['action', 'comedy', 'drama', 'adventure'];
+  const randomTerm = computed(() => randomSearchTerms[Math.floor(Math.random() * randomSearchTerms.length)]);
 
   const { execute, isFinished } = useAxios(
     baseUrl,
@@ -19,7 +22,8 @@
         'Content-Type': 'application/json',
       },
       params: {
-        s: 'Star Wars',
+        s: randomTerm.value,
+        type: 'movie',
       },
     },
     {
@@ -36,7 +40,8 @@
   const handlePageChange = (page: number) => {
     execute({
       params: {
-        s: 'Star Wars',
+        s: randomTerm.value,
+        type: 'movie',
         page,
       },
     });
@@ -45,7 +50,7 @@
 
 <template>
   <section class="flex flex-col items-center p-4 max-w-7xl mx-auto font-open-sans">
-    <h1 class="self-start my-4 text-2xl font-medium text-gray-700 dark:text-gray-300">All Star Wars movies</h1>
+    <h1 class="self-start my-4 text-2xl font-medium text-gray-700 dark:text-gray-300">Find your next story</h1>
     <div v-if="isFinished" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 my-4">
       <movie-card v-for="movie in movies" :key="movie.imdbId" :movie="movie" :is-loading="isFinished" />
     </div>

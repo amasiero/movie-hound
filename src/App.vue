@@ -5,7 +5,7 @@
 
 <template>
   <nav-bar />
-  <main class="pt-20 bg-gray-50 dark:bg-gray-700 h-screen">
+  <main class="pt-28 md:pt-20 bg-gray-50 dark:bg-gray-700 h-screen max-h-full">
     <router-view />
   </main>
 </template>

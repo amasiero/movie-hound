@@ -2,17 +2,17 @@
   import LoadingSpin from '@/components/LoadingSpin.vue';
   import MovieCard from '@/components/MovieCard.vue';
   import Pagination from '@/components/Pagination.vue';
+  import useSearch from '@/composables/useSearch';
   import { baseUrl } from '@/models/apiBase';
   import Movie from '@/models/movie';
   import { useAxios } from '@vueuse/integrations/useAxios';
   import camelcaseKeys from 'camelcase-keys';
-  import { computed, ref } from 'vue';
+  import { ref } from 'vue';
 
   const movies = ref<Movie[]>([]);
   const totalMovies = ref(0);
 
-  const randomSearchTerms = ['action', 'comedy', 'drama', 'adventure'];
-  const randomTerm = computed(() => randomSearchTerms[Math.floor(Math.random() * randomSearchTerms.length)]);
+  const { search } = useSearch();
 
   const { execute, isFinished } = useAxios(
     baseUrl,
@@ -22,7 +22,7 @@
         'Content-Type': 'application/json',
       },
       params: {
-        s: randomTerm.value,
+        s: search.value,
         type: 'movie',
       },
     },
@@ -40,7 +40,7 @@
   const handlePageChange = (page: number) => {
     execute({
       params: {
-        s: randomTerm.value,
+        s: search.value,
         type: 'movie',
         page,
       },

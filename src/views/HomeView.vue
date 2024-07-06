@@ -5,9 +5,10 @@
   import useSearch from '@/composables/useSearch';
   import { baseUrl } from '@/models/apiBase';
   import Movie from '@/models/movie';
+  import { useDebounceFn } from '@vueuse/core';
   import { useAxios } from '@vueuse/integrations/useAxios';
   import camelcaseKeys from 'camelcase-keys';
-  import { ref } from 'vue';
+  import { ref, watch } from 'vue';
 
   const movies = ref<Movie[]>([]);
   const totalMovies = ref(0);
@@ -37,6 +38,13 @@
   );
   execute();
 
+  watch(
+    () => search.value,
+    () => triggerSearch(),
+  );
+
+  const triggerSearch = useDebounceFn(() => handlePageChange(1), 500);
+
   const handlePageChange = (page: number) => {
     execute({
       params: {
@@ -57,6 +65,9 @@
     <div v-else class="flex justify-center items-center h-[60vh]">
       <loading-spin />
     </div>
-    <pagination :total-items="totalMovies" @update:page="handlePageChange" />
+    <pagination v-if="totalMovies > 0" :total-items="totalMovies" @update:page="handlePageChange" />
+    <template v-else>
+      <p class="text-gray-500 dark:text-gray-400">No movies found</p>
+    </template>
   </section>
 </template>

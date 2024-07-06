@@ -2,15 +2,24 @@
   import Logo from '@/components/Logo.vue';
   import Search from '@/components/Search.vue';
   import Tooltip from '@/components/Tooltip.vue';
+  import useSearch from '@/composables/useSearch';
   import { MoonIcon, SunIcon } from '@heroicons/vue/24/outline';
   import { useDark, useToggle } from '@vueuse/core';
-  import { ref } from 'vue';
+  import { ref, watch } from 'vue';
   import { RouterLink } from 'vue-router';
 
   const isDark = useDark();
   const toggleDark = useToggle(isDark);
 
   const searchTerm = ref<string>('');
+  const { setSearchTerm } = useSearch();
+
+  watch(
+    () => searchTerm.value,
+    () => {
+      setSearchTerm(searchTerm.value);
+    },
+  );
 </script>
 
 <template>

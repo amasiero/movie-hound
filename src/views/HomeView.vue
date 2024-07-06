@@ -5,6 +5,7 @@
   import useSearch from '@/composables/useSearch';
   import { baseUrl } from '@/models/apiBase';
   import Movie from '@/models/movie';
+  import router from '@/routes';
   import { useDebounceFn } from '@vueuse/core';
   import { useAxios } from '@vueuse/integrations/useAxios';
   import camelcaseKeys from 'camelcase-keys';
@@ -53,6 +54,7 @@
         page,
       },
     });
+    router.push({ query: { q: search.value, page } });
   };
 </script>
 
